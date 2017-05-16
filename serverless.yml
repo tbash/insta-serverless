@@ -1,0 +1,13 @@
+service: insta
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+
+functions:
+  feed:
+    handler: handler.getFeed
+    events:
+      - http:
+          path: feed/{handle}
+          method: get
